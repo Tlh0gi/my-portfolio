@@ -52,14 +52,9 @@ export default function HomePage() {
         }
     }, [loading]);
 
-    const email = heroContent?.email || "";
+   
 
-    const handleCopyEmail = () => {
-        navigator.clipboard.writeText(email);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-    };
-
+   
     if (loading) {
         return (
             <div className="homepage">
@@ -99,12 +94,12 @@ export default function HomePage() {
                             <a href="skills">
                                 <button className="cta-primary">{heroContent.primary_button}</button>
                             </a>
+                            <a href="contact">
                             <button
-                                className="cta-secondary"
-                                onClick={handleCopyEmail}
-                            >
-                                {copied ? "Copied" : heroContent.secondary_button}
+                                className="cta-secondary">
+                                Get In Touch
                             </button>
+                            </a>
                         </div>
                     </div>
                 </div>
